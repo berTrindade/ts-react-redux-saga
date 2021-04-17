@@ -31,4 +31,7 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default reducer;
+/**
+ * Instead of using default export, we use named exports. That way we can group these exports
+ */
+export { reducer as repositoriesReducer };
