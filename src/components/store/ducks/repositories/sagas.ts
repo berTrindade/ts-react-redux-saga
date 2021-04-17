@@ -11,12 +11,8 @@ interface ReposResponse {
   }
 
 export function* load() {
-  console.log('res: ');
-
   try {
     const response: ReposResponse = yield call(api.get, 'users/bertrindade/repos');
-
-    console.log('res: ', response);
 
     yield put(loadSuccess(response.data));
   } catch (error) {
