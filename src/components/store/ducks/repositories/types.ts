@@ -17,9 +17,18 @@ export enum RepositoriesTypes {
  *
  * Response object for GET /users/{username}/repos
  */
+
+export interface Owner {
+   avatar_url: string;
+   login: string;
+}
+
 export interface Repository {
     id: number;
     name: string;
+    description: string;
+    topics: string[];
+    owner: Owner;
 }
 
 /**

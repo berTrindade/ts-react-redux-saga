@@ -6,7 +6,7 @@ interface OwnProps {
 }
 
 const RepositoryItem: React.FC<OwnProps> = ({ repository }: OwnProps) => (
-  <li>{repository.name}</li>
+  <td>{repository.name}</td>
 );
 
 export default memo(RepositoryItem);

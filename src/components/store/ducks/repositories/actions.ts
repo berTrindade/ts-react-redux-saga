@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { RepositoriesTypes, Repository } from './types';
 
-export const loadRequest = () => ({ type: RepositoriesTypes.LOAD_REQUEST });
+export const loadRequest = (username: string) => ({ type: RepositoriesTypes.LOAD_REQUEST, payload: username });
 
 export const loadSuccess = (payload: Repository[]) => ({ type: RepositoriesTypes.LOAD_SUCCESS, payload });
 

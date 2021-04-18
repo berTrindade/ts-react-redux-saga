@@ -1,11 +1,15 @@
 import { Provider } from 'react-redux';
 import store from './components/store';
-import RepositoryList from './components/RepositoriesList';
+import { Home } from './pages/index';
+import GlobalStyle from './styles/globals';
 
 const App: React.FC = () => (
-  <Provider store={store}>
-    <RepositoryList />
-  </Provider>
+  <>
+    <GlobalStyle />
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  </>
 );
 
 export default App;

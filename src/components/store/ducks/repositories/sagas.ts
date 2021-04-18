@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { call, put } from 'redux-saga/effects';
+import { call, put, Effect } from 'redux-saga/effects';
 
 import api from '../../../../services/api';
 
@@ -10,9 +10,11 @@ interface ReposResponse {
     data: Repository[];
   }
 
-export function* load() {
+export function* load(action: Effect) {
+  console.log('action: ', action);
+
   try {
-    const response: ReposResponse = yield call(api.get, 'users/bertrindade/repos');
+    const response: ReposResponse = yield call(api.get, `users/${action.payload}/repos`);
 
     yield put(loadSuccess(response.data));
   } catch (error) {
